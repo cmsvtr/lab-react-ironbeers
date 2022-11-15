@@ -13,21 +13,18 @@ import './App.css';
 
 function App() {
   
-  const [beers, setBeers] = useState([])
-    
-  useEffect(() => {
-      
-      async function fetchBeers() {
-          const response = await axios.get('https://ih-beers-api2.herokuapp.com/beers')
-          setBeers(response.data)
-      }
-
-      fetchBeers()
-
-      console.log('Am I running')
-
-  }, [])
+  const [beers, setBeers] = useState([])   
   
+  useEffect(() => {
+    async function fetchBeers() {
+      const response = await axios.get('https://ih-beers-api2.herokuapp.com/beers')
+      setBeers(response.data)
+      console.log('SAD')
+    }
+
+    fetchBeers()
+
+  }, [])   
   
   return (
     <div className="App">
