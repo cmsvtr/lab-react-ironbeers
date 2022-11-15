@@ -22,9 +22,9 @@ function Home() {
     }, [])   
     
     const randomIndex = Math.floor(Math.random()*beers.length)
+    const randomBeer = beers.find(beer => beer._id === beer[randomIndex])
 
-    console.log(beers)
-    
+       
     return (
         <>
             <LinkContainer to='/Beers'>
@@ -35,7 +35,7 @@ function Home() {
             <h2>All Beers</h2>
 
             <article>Showcase our complete selection of ales.</article>
-            <LinkContainer to={`/${beers[randomIndex]}`}>
+            <LinkContainer to={randomBeer._id}>
                 <Link>
                     <img src={RandomBeersImg} alt='random beer'/>
                 </Link>
